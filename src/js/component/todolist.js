@@ -3,9 +3,9 @@ import React, { useState } from "react";
 export function TodoList() {
 	let [newTask, setNewTask] = useState("");
 	let [todoList, setTodoList] = useState([
-		"wash hands",
-		"make the dinner",
-		"sleep"
+		"Wash hands",
+		"Make the dinner",
+		"Sleep"
 	]);
 
 	const handleKeyPress = event => {
@@ -24,8 +24,13 @@ export function TodoList() {
 		setTodoList(newArr);
 	};
 
+	React.useEffect(() => {
+		console.log("the list was changed to: ", todoList);
+	}, [todoList]);
+
 	return (
-		<div>
+		<div className="bigContainer">
+			<h1 className="bigTitle">TASKS FOR TODAY</h1>
 			<input
 				type="text"
 				id="newtask"
@@ -37,10 +42,11 @@ export function TodoList() {
 			<ul className="allTask">
 				{todoList.map((task, i) => {
 					return (
-						<li className="task" key={i}>
-							{task}
+						<li className="litask" key={i}>
+							☞ {task}
 							<button
-								className="button"
+								type="button"
+								className="btn btn-outline-danger"
 								value={i}
 								onClick={deleteTodo}>
 								X

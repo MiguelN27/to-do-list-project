@@ -12,8 +12,28 @@
 
 */
 
-.task{
+.litask{
     display: flex;
     justify-content: space-between;
+    padding: 0px 170px 0px 100px;
+}
+body{
+    background-color: black;
+    color: whitesmoke;
+}
+.bigContainer{
+    padding: 0px 200px 0px 200px;
+}
+
+.bigTitle{
+    padding-bottom: 40px;
+}
+
+#newtask{
+    margin-bottom: 50px;
+}
+
+task:hover{
+    text-decoration-line: line-through;
 }
 
